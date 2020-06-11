@@ -3,7 +3,7 @@ const axios = require("axios");
 
 export function request(config) {
   const instanse = axios.create({
-    baseURL: "http://123.207.32.32:8000",
+    baseURL: "http://localhost:3000",
     timeout: 5000,
   });
 

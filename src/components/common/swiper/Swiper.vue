@@ -23,7 +23,7 @@
       },
       animDuration: {
 		    type: Number,
-        default: 300
+        default: 1000
       },
       moveRatio: {
         type: Number,
@@ -44,7 +44,7 @@
       }
     },
     mounted: function () {
-      // 1.操作DOM, 在前后添加Slide
+      //* 1.操作DOM, 在前后添加Slide
       setTimeout(() => {
         this.handleDom();
 
