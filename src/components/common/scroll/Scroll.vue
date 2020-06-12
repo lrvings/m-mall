@@ -8,10 +8,11 @@
 
 <script>
 import BScroll from 'better-scroll'
+
 export default {
   name: 'Scroll',
   props:{
-    probeType:{
+    probeType: {
       type: Number,
       default: 0
     },
@@ -41,6 +42,12 @@ export default {
   methods: {
     scrollTo(x,y,time=600){
       this.scroll.scrollTo(x,y,time)
+    },
+    refresh(){
+      this.scroll && this.scroll.refresh()
+    },
+    getScrollY(){
+      return this.scroll ? this.scroll.y : 0
     }
   },
 }

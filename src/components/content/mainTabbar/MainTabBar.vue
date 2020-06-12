@@ -1,8 +1,4 @@
 <template>
-  <div>
-    <keep-alive>
-      <router-view />
-    </keep-alive>
     <tab-bar>
       <tab-bar-item
         v-for="(i, index) in tabarArr"
@@ -21,7 +17,6 @@
         </div>
       </tab-bar-item>
     </tab-bar>
-  </div>
 </template>
 
 <script>

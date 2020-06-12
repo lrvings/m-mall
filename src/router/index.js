@@ -39,7 +39,15 @@ const routes = [
     meta: {
       title: '我的'
     }
-  }
+  },
+  {
+    path: '/detail/:id',
+    name: 'Detail',
+    component: () => import('views/detail/Detail'),
+    meta: {
+      title: '商品详情'
+    }
+  },
 ]
 
 const router = new Router({

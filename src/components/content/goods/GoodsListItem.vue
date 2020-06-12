@@ -1,7 +1,7 @@
 <template>
   <div class="goods-all">
-    <div v-for="item in goodsItem" :key="item.id"  class="goods-item">
-      <img :src="item.img" alt="" />
+    <div v-for="item in goodsItem" :key="item.ids"  class="goods-item" @click="gotodetail">
+      <img :src="item.img" alt="" @load="imageLoad"/>
       <div class="goods-info">
         <p>{{ item.title }}</p>
         <span class="price">{{ item.price }}</span>
@@ -21,7 +21,33 @@ export default {
         return []
       }
     }
-  }
+  },
+  data() {
+    return {
+    }
+  },
+  methods: {
+    imageLoad(){
+      // *事件总线
+      this.$bus.$emit('itemImageLoad')
+    },
+    gotodetail(){;
+      //* Bug  总是拿到最后一个ID
+      // this.goodsItem.forEach(item => {  this.id = item.id })
+      // let ids = this.iid
+      // let p = new Promise((resolve,reject) => {
+      //     for(var item of this.goodsItem) {
+      //      resolve(item)
+      //     }
+      // })
+      // p.then(res => {
+      //   ids = res.id
+      // })
+       this.$router.push('/detail/'+ this.goodsItem[0].id)
+    }
+
+  },
+
 }
 </script>
 
