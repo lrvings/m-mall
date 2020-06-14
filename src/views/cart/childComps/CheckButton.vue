@@ -37,7 +37,7 @@
   .icon-selector {
     position: relative;
     margin: 0;
-    width: 18px;
+    width: 20px;
     height: 18px;
     border-radius: 50%;
     border: 2px solid #ccc;

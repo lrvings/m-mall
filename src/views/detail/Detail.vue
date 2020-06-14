@@ -113,11 +113,14 @@ export default {
       const product = {}
       // 1.获取购物车需要展示的信息
       product.id = this.id
+      product.image = this.topImages[0]
       product.title = this.goods.title
       product.desc = this.goods.desc
       product.newPrice = this.goods.newPrice
       // 2.将商品添加到购物车
-     this.$store.commit('addCart',product)
+     this.$store.dispatch('addCart',product).then(res => {
+        this.$toast.show(res,1500)
+     })
     }
   },
 }

@@ -38,8 +38,8 @@ export default {
           actived: require("assets/img/tabbar/home_active.svg")
         },
         {
-          path: "/category",
-          name: "分类",
+          path: "/detail",
+          name: "详情",
           normal: require("assets/img/tabbar/category.svg"),
           actived: require("assets/img/tabbar/category_active.svg")
         },

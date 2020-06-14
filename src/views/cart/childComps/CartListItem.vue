@@ -5,7 +5,7 @@
     </div>
     <div class="item-img">
       <img
-        src="https://m.360buyimg.com/babel/s267x267_jfs/t1/85207/12/13314/233139/5e5371e3Ef53fe3f1/d6de2975bfc59f7c.jpg!cc_501x501!q70.dpg"
+        :src="product.image"
         alt="商品图片"
       />
     </div>
@@ -22,6 +22,7 @@
 
 <script>
 import CheckButton from "./CheckButton";
+
 export default {
   name: "CartListItem",
   components: {

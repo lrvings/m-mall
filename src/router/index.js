@@ -17,11 +17,11 @@ const routes = [
     }
   },
   {
-    path: '/category',
+    path: '/detail',
     name: 'Category',
-    component: () => import('views/category/Category'),
+    component: () => import('views/detail/Detail'),
     meta: {
-      title: '分类'
+      title: '详情页'
     }
   },
   {

@@ -1,6 +1,6 @@
 # m-mall vue全家桶 + Node 移动端商城
 ☀☀☀
-** 项目地址：<https://github.com/lrvings/m-mall.git> **
+**项目地址：** <https://github.com/lrvings/m-mall.git> 
 
 ## 项目及简介
 

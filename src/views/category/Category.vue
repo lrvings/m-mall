@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="tit">分类界面</h1>
+    <h1 class="tit">分类界面 --未开发</h1>
   </div>
 </template>
 

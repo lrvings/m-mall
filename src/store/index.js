@@ -1,35 +1,40 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from "vue";
+import Vuex from "vuex";
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 const store = new Vuex.Store({
   state: {
     cartList: []
   },
   mutations: {
-    addCart(state,payload) {
+  },
+  actions:{
+    addCart(context, payload) {
+      return new Promise((resolve, reject) => {
 
-      //? 判断是否有该商品
-      let oldProduct = state.cartList.find(item => item.id === payload.id)
+        let oldProduct = context.state.cartList.find(item => item.id === payload.id);
 
-      if(oldProduct) {
-        oldProduct.count += 1
-      }else {
-        payload.count = 1
-        payload.checked = true
-        state.cartList.push(payload)
-      }
+        if (oldProduct) {
+          oldProduct.count += 1;
+          resolve('当前数量+1')
+        } else {
+          payload.count = 1;
+          payload.checked = true;
+          context.state.cartList.push(payload);
+          resolve('加入购物车成功')
+        }
+      })
     }
   },
   getters: {
     cartLength(state) {
-      return state.cartList.length
+      return state.cartList.length;
     },
     cartList(state) {
-      return state.cartList
-    },
+      return state.cartList;
+    }
   }
-})
+});
 
-export default store
+export default store;
