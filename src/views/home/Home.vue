@@ -39,6 +39,7 @@ import FeatrueView from "./childComps/FeatrueView";
 
 import { getHomeMultidata, getHomeGoods } from "network/home";
 import {debounce} from '../../common/utils'
+import {backTopMixin} from '../../common/mixin'
 
 export default {
   name: "Home",
@@ -47,17 +48,16 @@ export default {
     TabControl,
     GoodList,
     Scroll,
-    BackTop,
     HomeSwiper,
     RecommendView,
     FeatrueView
   },
+  mixins: [backTopMixin],
   data() {
     return {
       banners: [],
       recommends: [],
       goodList: {},
-      isShowBackTop: false,
       tabControl: 0,
       isTabFixed: false,
       saveY: 0
@@ -84,10 +84,6 @@ export default {
     })
   },
   methods: {
-    //* 点击回到顶部
-    backClick(){
-      this.$refs.scroll.scrollTo(0,0)
-    },
     //* 监听内容滚动高度
     contentHandle(position){
       //* 是否显示BackTop

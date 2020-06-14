@@ -16,13 +16,11 @@
 <script>
 import NavBar from 'common/navbar/NavBar'
 
-
-
 export default {
   name: 'DetailNavBar',
   data() {
     return {
-      titles: ['商品','参数','评论','推荐'],
+      titles: ['商品','评论','参数','推荐'],
       currenIndex: 0
     }
   },
@@ -32,11 +30,12 @@ export default {
   methods: {
     itemClick(index){
       this.currenIndex = index
+      this.$emit('titleClick',index)
     },
     backHandle(){
       this.$router.back()
     }
-  },
+  }
 }
 
 </script>
@@ -46,12 +45,15 @@ export default {
   display: flex;
   font-size: 13px;
 }
+
 .title-item{
   flex: 1;
 }
+
 .nav-back img{
   margin-top: 10px;
 }
+
 .active{
   color: var(--color-high-text)
 }
